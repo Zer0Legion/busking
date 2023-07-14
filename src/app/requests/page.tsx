@@ -21,7 +21,7 @@ export default function Requests() {
             <div
                 className="container flex flex-col h-5/6 justify-evenly items-center"
             >
-                <Typography className="flex justify-center text-2xl mt-4 font-mono ">Song Requests</Typography>
+                <Typography className="flex justify-center text-2xl mt-8 font-mono ">Song Requests</Typography>
                 <div
                     className="m-4 flex flex-col gap-2 outline outline-1 outline-blue-gray-900 p-4 rounded-xl">
                     <Typography>
