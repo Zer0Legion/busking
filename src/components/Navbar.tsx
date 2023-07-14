@@ -52,14 +52,14 @@ export default function Example() {
  
   return (
     <Navbar 
-    className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4"
+    className="mx-auto max-w-screen-xl py-4 px-6 lg:px-8 lg:py-4"
     color="blue-gray"
     >
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
           href="/"
-          className="mr-4 cursor-pointer py-1.5 font-medium"
+          className="mr-4 cursor-pointer py-1.5 font-large"
         >
           KHAI THE BUSKER
         </Typography>
