@@ -28,7 +28,7 @@ export default function Requests() {
                     className={clicked}
                 >
                     <Typography className="">Download my SGQR:</Typography>
-                    <img className="mt-2" src={SGQR.src}></img>
+                    <img className="mt-2" src={SGQR.src} alt="my-sgqr"></img>
                 </div>
             </div>
         
