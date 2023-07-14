@@ -61,7 +61,7 @@ export default function Example() {
           href="/"
           className="mr-4 cursor-pointer py-1.5 font-large"
         >
-          KHAI THE BUSKER
+          BUSKINGKHAI
         </Typography>
         <div className="hidden lg:block">{navList}</div>
 
