@@ -20,7 +20,15 @@ export default function Example() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="aboutme" className="flex items-center">
+          About Me
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
         className="p-1 font-normal"
       >
         <a href="requests" className="flex items-center">
@@ -30,17 +38,15 @@ export default function Example() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
         className="p-1 font-normal"
       >
         <a href="links" className="flex items-center">
-          Follow Me!
+          My Links
         </a>
       </Typography>
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
         className="p-1 font-normal"
       >
         <a href="tip" className="flex items-center">
@@ -52,14 +58,13 @@ export default function Example() {
  
   return (
     <Navbar 
-    className="mx-auto max-w-screen-xl py-4 px-6 lg:px-8 lg:py-4"
-    color="blue-gray"
+    className="mx-auto max-w-screen-xl py-4 px-6 lg:px-8 lg:py-4 bg-brown-900 rounded-none outline-2 outline outline-brown-700"
     >
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
           href="/"
-          className="mr-4 cursor-pointer py-1.5 font-extrabold text-2xl"
+          className="mr-4 cursor-pointer py-1.5 font-extrabold text-2xl text-white"
         >
           BUSKINGKHAI
         </Typography>
@@ -67,7 +72,7 @@ export default function Example() {
 
         <IconButton
           variant="text"
-          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden text-brown-100"
           ripple={false}
           onClick={() => setOpenNav(!openNav)}
         >

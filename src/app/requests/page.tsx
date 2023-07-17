@@ -2,10 +2,11 @@
 
 import Navbar from "@/components/Navbar";
 import { Button, Input, Typography } from "@material-tailwind/react";
-import { useState } from "react";
+import React, { useState } from "react";
 import addSongRequest from "../firebase/addSongRequest";
 import checkUniqueTitle from "../firebase/checkUniqueTitle";
 import RequestWriteup from "../writeups/RequestWriteup";
+
 
 export default function Requests() {
     const [title, setTitle] = useState<string>("");
@@ -13,7 +14,9 @@ export default function Requests() {
     const [notes, setNotes] = useState<string>("");
 
     const [reqStatus, setReqStatus] = useState<string>("");
-    const [color, setColor] = useState<string>("text-green-300");
+    const [color, setColor] = useState<string>("text-green-700");
+
+    const [isBusking, setIsBusking] = useState<any>(true);
 
     return (
         <div>
@@ -21,26 +24,26 @@ export default function Requests() {
             <div
                 className="container flex flex-col h-5/6 justify-evenly items-center"
             >
-                <Typography className="flex justify-center text-2xl mt-8 font-mono ">Song Requests</Typography>
+                <Typography className="flex justify-center text-2xl mt-8 font-mono text-brown-900 ">Song Requests</Typography>
                 <div
-                    className="m-4 flex flex-col gap-2 outline outline-1 outline-blue-gray-900 p-4 rounded-xl">
+                    className="m-4 flex flex-col gap-2 outline outline-1 outline-brown-300 p-4 rounded-xl">
                     <Typography>
                         Have a song request? Let me know here!
                     </Typography>
-                    <Input color="gray" label="Song Title" onChange={e => {
+                    <Input color="brown" label="Song Title" className="placeholder-brown-500" onChange={e => {
                         setTitle(e.currentTarget.value);
                     }} />
 
                     <Typography>Optional fields:</Typography>
-                    <Input label="Artist (Optional)" onChange={e => {
+                    <Input color="brown" className="text-brown-500" label="Artist (Optional)" onChange={e => {
                         setArtist(e.currentTarget.value);
                     }} />
-                    <Input label="Additional Notes/ Requests (Optional)" onChange={e => {
+                    <Input color="brown" label="Additional Notes/ Requests (Optional)" onChange={e => {
                         setNotes(e.currentTarget.value);
                     }} />
-                    <Button color="blue-gray" className="my-4" onClick={() => {
+                    <Button color="brown" className="my-4" onClick={() => {
                         if (title == "") {
-                            setColor("text-red-300");
+                            setColor("text-red-900");
                             setReqStatus("Please enter a song title!");
                         } else {
                             checkUniqueTitle(title.toLowerCase().trim()).then(b => {
@@ -50,11 +53,11 @@ export default function Requests() {
                                         artist.toLowerCase().trim(),
                                         notes.toLowerCase().trim()
                                     ).then(r => {
-                                        setColor("text-green-300");
+                                        setColor("text-green-700");
                                         setReqStatus("Song added!");
                                     }); // 1 success, 0 error- no song title, -1 repeated entry
                                 } else {
-                                    setColor("text-red-300");
+                                    setColor("text-yellow-200");
                                     setReqStatus("Hold on, this song is about to be played!");
                                 }
                             })
