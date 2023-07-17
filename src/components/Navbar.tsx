@@ -59,7 +59,7 @@ export default function Example() {
         <Typography
           as="a"
           href="/"
-          className="mr-4 cursor-pointer py-1.5 font-large"
+          className="mr-4 cursor-pointer py-1.5 font-extrabold text-2xl"
         >
           BUSKINGKHAI
         </Typography>
