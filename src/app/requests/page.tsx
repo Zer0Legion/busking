@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import { Button, Input, Typography } from "@material-tailwind/react";
 import React, { useState } from "react";
 import addSongRequest from "../firebase/addSongRequest";
-import checkUniqueTitle from "../firebase/checkUniqueTitle";
+import checkUniqueTitle from "../firebase/checkUniqueSong";
 import RequestWriteup from "../writeups/RequestWriteup";
 
 
@@ -46,7 +46,7 @@ export default function Requests() {
                             setColor("text-red-900");
                             setReqStatus("Please enter a song title!");
                         } else {
-                            checkUniqueTitle(title.toLowerCase().trim()).then(b => {
+                            checkUniqueTitle(title.toLowerCase().trim(), artist.toLowerCase().trim()).then(b => {
                                 if (b) {
                                     addSongRequest(
                                         title.toLowerCase().trim(),
