@@ -9,7 +9,7 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 export default function Links() {
     return (
-        <div>
+        <div className="flex flex-container flex-col items-center justify-center">
             <Navbar></Navbar>
             <div
                 className="container flex flex-col items-center gap-2 p-2 justify-center mt-8"

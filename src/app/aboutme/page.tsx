@@ -8,7 +8,7 @@ import fhd_busking from "../../../assets/fhd_busking.jpg"
 
 export default function AboutMe() {
     return (
-    <div>
+    <div className="flex flex-container flex-col items-center justify-center">
         <Navbar></Navbar>
         <div
         className="flex container flex-col items-center"

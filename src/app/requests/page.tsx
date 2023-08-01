@@ -16,10 +16,9 @@ export default function Requests() {
     const [reqStatus, setReqStatus] = useState<string>("");
     const [color, setColor] = useState<string>("text-green-700");
 
-    const [isBusking, setIsBusking] = useState<any>(true);
 
     return (
-        <div>
+        <div className="flex flex-container flex-col items-center justify-center">
             <Navbar></Navbar>
             <div
                 className="container flex flex-col h-5/6 justify-evenly items-center"

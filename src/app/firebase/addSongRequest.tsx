@@ -6,6 +6,7 @@ import checkUniqueTitle from "./checkUniqueSong";
 import getIsBusking from "./getIsBusking";
 
 export default async function addSongRequest(name: string, artist: string, remarks: string): Promise<any> {
+    console.log("addSongRequest");
     let isBusking = true;
     await getIsBusking().then(r => isBusking = r);
 

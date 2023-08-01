@@ -12,7 +12,7 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex flex-container flex-col items-center justify-center">
       <Navbar></Navbar>
       <div
         className="flex container flex-col items-center"
@@ -24,10 +24,10 @@ export default function Home() {
         <Image className=" inline w-52 z-30 relative bottom-24 rounded-xl outline outline-1 outline-brown-700" src={aboutMe.src} alt={"about_me"} width="1000" height="1000" ></Image>
       </div>
       <div className="flex flex-col items-center relative bottom-12">
-        <a href="/aboutme" className="mb-2"><Button size="lg" className="bg-brown-500 w-52"><PersonIcon /> About Me</Button></a>
-        <a href="/requests" className="mb-2"><Button size="lg" className="bg-brown-500 w-52"><QuestionMarkIcon /> Song Requests</Button></a>
-        <a href="/links" className="mb-2"><Button size="lg" className="bg-brown-500 w-52"><InstagramIcon/> My Links</Button></a>
-        <a href="/tip" className="mb-2"><Button size="lg" className="bg-brown-500 w-52"><AttachMoneyIcon /> Tip Me</Button></a>
+        <a href="/aboutme" className="mb-2"><Button size="lg" className="bg-brown-500 w-52"><PersonIcon className="mr-1" /> About Me</Button></a>
+        <a href="/requests" className="mb-2"><Button size="lg" className="bg-brown-500 w-52"><QuestionMarkIcon className="mr-1" /> Song Requests</Button></a>
+        <a href="/links" className="mb-2"><Button size="lg" className="bg-brown-500 w-52"><InstagramIcon className="mr-1"/> My Links</Button></a>
+        <a href="/tip" className="mb-2"><Button size="lg" className="bg-brown-500 w-52 flex container items-center "><AttachMoneyIcon className="mr-1"/><div> Tip Me /<br/> Send a message!</div></Button></a>
       </div>
     </div>
   )
