@@ -27,7 +27,7 @@ export default function Home() {
         <a href="/aboutme" className="mb-2"><Button size="lg" className="bg-brown-500 w-52"><PersonIcon /> About Me</Button></a>
         <a href="/requests" className="mb-2"><Button size="lg" className="bg-brown-500 w-52"><QuestionMarkIcon /> Song Requests</Button></a>
         <a href="/links" className="mb-2"><Button size="lg" className="bg-brown-500 w-52"><InstagramIcon/> My Links</Button></a>
-        <a href="tipme" className="mb-2"><Button size="lg" className="bg-brown-500 w-52"><AttachMoneyIcon /> Tip Me</Button></a>
+        <a href="/tip" className="mb-2"><Button size="lg" className="bg-brown-500 w-52"><AttachMoneyIcon /> Tip Me</Button></a>
       </div>
     </div>
   )
