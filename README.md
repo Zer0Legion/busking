@@ -10,7 +10,7 @@ This is a audience-facing web application created to allow audience to find out 
 3. Find out more about me.
 
 The web application is designed with mobile interfaces in mind as it will mostly be accessed through scanning a QR code displayed when I am busking.
-A straightforward and intuitive user interface is required to cater to the largely transient target audience who mostly do not have time to stop.
+An intuitive user interface is required to cater to the largely transient target audience who mostly do not have time to stop.
 
 ## Project Description
 
