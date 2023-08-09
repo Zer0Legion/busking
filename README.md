@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## My Busking Page
 
-## Getting Started
+See the deployed version on https://buskingkhai.netlify.app!
 
-First, run the development server:
+## Introduction
+THis is a audience-facing web application created to allow audience to find out more about myself when I am busking. The main goal is to enhance engagement with the audience, allowing them to:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Request Songs
+2. Tip me through cashless methods (PayNow)
+3. Find out more about me.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The web application is designed with mobile interfaces in mind as it will mostly be accessed through scanning a QR code displayed when I am busking.
+A straightforward and intuitive user interface is required to cater to the largely transient target audience who mostly do not have time to stop.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Description
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Frontend: NextJS with Typescript
+Database: Google Firebase
+CSS: Material-Tailwind
 
-## Learn More
+Deployed on Netlify
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This web application is largely static with the most important feature being a song request system that writes onto the database. More complex functionalities are implemented on the admin page.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. A real-time song request system that allows users to add requests with song titles, artists and additional requests/remarks onto the database. (Requests will be viewed by me on the admin webpage, which is hosted on a separate repository.)
+2. A tip page that allows users to download my PayNow QR code, and leave a message for me.
+3. Displays inks for my social media and a writeup about myself.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+There are no future plans at the moment as I find the audience facing page satisfactorily functional for now. I have designed the application to be as extensible as possible to support any further functionalities that I may want to add in the future.
