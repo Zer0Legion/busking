@@ -3,7 +3,7 @@
 See the deployed version on https://buskingkhai.netlify.app!
 
 ## Introduction
-THis is a audience-facing web application created to allow audience to find out more about myself when I am busking. The main goal is to enhance engagement with the audience, allowing them to:
+This is a audience-facing web application created to allow audience to find out more about myself when I am busking. The main goal is to enhance engagement with the audience, allowing them to:
 
 1. Request Songs
 2. Tip me through cashless methods (PayNow)
