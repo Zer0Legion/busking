@@ -13,7 +13,7 @@ import addMessage from "../firebase/addMessage";
 export default function TipMe() {
     const FileSaver = require('file-saver');
 
-    const [clicked, setClicked] = useState("outline outline-2 rounded-md p-6 outline-brown-300");
+    const [clicked, setClicked] = useState("outline outline-2 rounded-md p-6 outline-light-blue-300");
     const [message, setMessage] = useState<string>("");
     const [messageFrom, setMessageFrom] = useState<string>("");
 
@@ -25,13 +25,13 @@ export default function TipMe() {
             <div
                 className="flex flex-col items-center gap-3 p-6"
             >
-                <Typography className="flex justify-center text-2xl mt-4 font-mono ">Tip Me</Typography>
+                <Typography className="flex justify-center text-4xl font-semibold mt-4 font-mono ">Tip Me</Typography>
                 <Typography><TipWriteup /></Typography>
                 <div
                     onClick={() => {
                         FileSaver.saveAs(SGQR.src, "buskingkhai_sgqr.jpg");
-                        setClicked("outline outline-2 rounded-md p-6 outline-brown-200");
-                        setTimeout(() => setClicked("outline outline-2 rounded-md p-6 outline-brown-300"), 250)
+                        setClicked("outline outline-2 rounded-md p-6 outline-light-blue-200");
+                        setTimeout(() => setClicked("outline outline-2 rounded-md p-6 outline-light-blue-300"), 250)
                     }}
                     className={clicked}
                 >
@@ -39,12 +39,12 @@ export default function TipMe() {
                     <Image className="mt-2" src={SGQR.src} alt="my-sgqr" width="1000" height="1000" ></Image>
                 </div>
                
-                <Typography className="flex justify-center text-2xl mt-4 font-mono ">Leave a Message!</Typography>
+                <Typography className="flex justify-center text-4xl font-semibold mt-4 font-mono ">Leave a Message!</Typography>
                 <Typography><MessageWriteup/></Typography>
 
                 <Input color="brown" label="Your Name" size="md" onChange={(e) => {setMessageFrom(e.currentTarget.value)}}></Input>
                 <Input color="brown" label="Your Message here..." size="lg" onChange={(e) => {setMessage(e.currentTarget.value)}}></Input>
-                <a href="./"><Button color="brown" onClick={(e) => {
+                <a href="./"><Button className="bg-light-blue-300" onClick={(e) => {
                     console.log(messageFrom, message);
                     if (message.length > 4) {
                         addMessage(messageFrom, message);

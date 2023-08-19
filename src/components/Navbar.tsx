@@ -7,7 +7,7 @@ import {
   IconButton,
   Collapse,
 } from "@material-tailwind/react";
- 
+
 export default function Example() {
   const [openNav, setOpenNav] = useState(false);
  
@@ -58,7 +58,7 @@ export default function Example() {
  
   return (
     <Navbar 
-    className="mx-auto max-w-screen-xl py-4 px-6 lg:px-8 lg:py-4 bg-brown-900 rounded-none outline-2 outline outline-brown-700"
+    className="mx-auto max-w-screen-xl py-4 px-6 lg:px-8 lg:py-4  bg-light-blue-400 rounded-none outline-2 outline"
     >
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
