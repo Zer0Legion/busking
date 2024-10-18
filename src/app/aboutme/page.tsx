@@ -5,6 +5,7 @@ import AboutMeWriteup from "../writeups/AboutMeWriteup";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import fhd_busking from "../../../assets/fhd_busking.jpg"
+import transparent from "../../../assets/transparent_image.png"
 
 export default function AboutMe() {
     return (
@@ -17,6 +18,7 @@ export default function AboutMe() {
           <Typography className="font-mono text-6xl relative bottom-12 text-brown-200 font-semibold" >ABOUT ME</Typography>
         </div>
         <Image className=" inline w-52 z-30 relative bottom-24 rounded-xl outline outline-1 outline-brown-700" src={fhd_busking.src} alt={"about_me"} width="1000" height="1000" ></Image>
+        <Image src={transparent.src} alt="transparent" width="1" height="1"></Image>
       </div>
         <AboutMeWriteup></AboutMeWriteup>
     </div>

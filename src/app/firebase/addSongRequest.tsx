@@ -11,6 +11,7 @@ export default async function addSongRequest(name: string, artist: string, remar
     await getIsBusking().then(r => isBusking = r);
 
     checkUniqueTitle(name, artist).then((r) => {
+        
         if (isBusking &&( r && name != "")) {
             addDoc(collection(db, "requests"), {
                 name: name,
