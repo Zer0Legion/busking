@@ -16,13 +16,6 @@ export default function RequestWriteup() {
                     backgroundColor: '#f9f9f9',
                 }}
             >
-                <Image 
-                    src="/../../assets/prive.png" 
-                    alt="Privé" 
-                    width={300} 
-                    height={200} 
-                    style={{ margin: '10px 0', borderRadius: '5px' }} 
-                />
                 <h2 style={{fontWeight: 'bold'}}>Privé Special</h2>
                 <p>
                     I seek your understanding that there will be more restrictions on song requests for this event:
