@@ -34,7 +34,7 @@ export default function Requests() {
                     }} />
 
                     <Typography className="text-black">Optional fields:</Typography>
-                    <Input color="light-blue" className="text-brown-500" label="Artist (Optional)" onChange={e => {
+                    <Input color="light-blue" label="Artist (Optional)" onChange={e => {
                         setArtist(e.currentTarget.value);
                     }} />
                     <Input color="light-blue" label="Additional Notes/ Requests (Optional)" onChange={e => {
