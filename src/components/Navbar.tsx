@@ -3,12 +3,13 @@ import {
   Navbar,
   MobileNav,
   Typography,
-  Button,
   IconButton,
   Collapse,
 } from "@material-tailwind/react";
+import { NAVIGATION_ITEMS, SITE_CONFIG, UI_CONSTANTS } from "@/constants";
+import Link from "next/link";
 
-export default function Example() {
+export default function Navigation() {
   const [openNav, setOpenNav] = useState(false);
  
   useEffect(() => {
@@ -17,48 +18,24 @@ export default function Example() {
  
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography
-        as="li"
-        variant="small"
-        className="p-1 font-normal"
-      >
-        <a href="aboutme" className="flex items-center">
-          About Me
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        className="p-1 font-normal"
-      >
-        <a href="requests" className="flex items-center">
-          Song Requests
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        className="p-1 font-normal"
-      >
-        <a href="links" className="flex items-center">
-          My Links
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        className="p-1 font-normal"
-      >
-        <a href="tip" className="flex items-center">
-          Tip Me
-        </a>
-      </Typography>
+      {NAVIGATION_ITEMS.map((item) => (
+        <Typography
+          key={item.href}
+          as="li"
+          variant="small"
+          className="p-1 font-normal"
+        >
+          <Link href={item.href} className="flex items-center">
+            {item.label}
+          </Link>
+        </Typography>
+      ))}
     </ul>
   );
  
   return (
     <Navbar 
-    className="mx-auto max-w-screen-xl py-4 px-6 lg:px-8 lg:py-4  bg-light-blue-400 rounded-none outline-2 outline"
+      className={`mx-auto max-w-screen-xl py-4 px-6 lg:px-8 lg:py-4 ${UI_CONSTANTS.colors.primary} rounded-none outline-2 outline`}
     >
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
@@ -66,7 +43,7 @@ export default function Example() {
           href="/"
           className="mr-4 cursor-pointer py-1.5 font-extrabold text-2xl text-white"
         >
-          BUSKINGKHAI
+          {SITE_CONFIG.name}
         </Typography>
         <div className="hidden lg:block">{navList}</div>
 
@@ -111,7 +88,6 @@ export default function Example() {
       <Collapse open={openNav}>
         <div className="container mx-auto">
           {navList}
-       
         </div>
       </Collapse>
     </Navbar>

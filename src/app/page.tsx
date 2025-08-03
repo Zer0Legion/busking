@@ -1,34 +1,39 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import { Button, Typography } from "@material-tailwind/react";
-import bg from "../../assets/guitar-bg.jpg";
-import aboutMe from "../../assets/aboutme.jpg";
 import Image from "next/image";
-import InstagramIcon from '@mui/icons-material/Instagram';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import PersonIcon from '@mui/icons-material/Person';
-import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+import { Typography } from "@material-tailwind/react";
+import PageLayout from "@/components/layout/PageLayout";
+import NavigationButton from "@/components/ui/NavigationButton";
+import { NAVIGATION_ITEMS, UI_CONSTANTS, SITE_CONFIG } from "@/constants";
+import aboutMe from "../../assets/aboutme.jpg";
 
 export default function Home() {
   return (
-    <div className="flex flex-container flex-col items-center justify-center">
-      <Navbar></Navbar>
-      <div
-        className="flex container flex-col items-center"
-      >
-        {/* bg-orange-200 */}
-        <div className=" w-screen flex z-0 relative container justify-center rounded-b-xl pt-24 pb-24">
-          <Typography className="font-mono text-6xl relative bottom-12 text-brown-200 font-semibold" >BUSKINGKHAI</Typography>
+    <PageLayout>
+      <div className="flex container flex-col items-center">
+        {/* Hero Section */}
+        <div className="w-screen flex z-0 relative container justify-center rounded-b-xl pt-24 pb-24">
+          <Typography className={`${UI_CONSTANTS.typography.brandTitle} relative bottom-12`}>
+            {SITE_CONFIG.name}
+          </Typography>
         </div>
-        <Image className=" inline w-44 z-30 relative bottom-24 rounded-xl outline outline-1 outline-brown-700" src={aboutMe.src} alt={"about_me"} width="1000" height="1000" ></Image>
+        
+        {/* Profile Image */}
+        <Image 
+          className="inline w-44 z-30 relative bottom-24 rounded-xl outline outline-1 outline-brown-700" 
+          src={aboutMe.src} 
+          alt="About me" 
+          width="1000" 
+          height="1000" 
+        />
       </div>
+      
+      {/* Navigation Buttons */}
       <div className="flex flex-col items-center relative bottom-12">
-        <a href="/aboutme" className="mb-2"><Button size="lg" className="bg-light-blue-400 w-56"><PersonIcon className="mr-1" /> About Me</Button></a>
-        <a href="/requests" className="mb-2"><Button size="lg" className="bg-light-blue-400 w-56"><QuestionMarkIcon className="mr-1" /> Song Requests</Button></a>
-        <a href="/links" className="mb-2"><Button size="lg" className="bg-light-blue-400 w-56"><InstagramIcon className="mr-1"/> My Links</Button></a>
-        <a href="/tip" className="mb-2"><Button size="lg" className="bg-light-blue-400 w-56 flex container items-center "><AttachMoneyIcon className="mr-1"/><div> Tip Me /<br/> Send a message!</div></Button></a>
+        {NAVIGATION_ITEMS.map((item) => (
+          <NavigationButton key={item.href} item={item} />
+        ))}
       </div>
-    </div>
-  )
+    </PageLayout>
+  );
 }
