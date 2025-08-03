@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
   description: 'Interactive busking platform for song requests and tips',
 } as const;
 
-export const NAVIGATION_ITEMS: NavigationItem[] = [
+export const NAVIGATION_ITEMS: readonly NavigationItem[] = [
   {
     href: '/aboutme',
     label: 'About Me',
