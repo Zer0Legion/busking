@@ -7,18 +7,19 @@ export default function AboutMeWriteup() {
         <div className="flex flex-col gap-4">
             <ContentSection
                 content={
-                    <div className="text-center space-y-6">
-                        <div className="space-y-4">
+                    <div className="space-y-6">
+                        <div className="space-y-4 text-center">
                             <h2 className="text-2xl font-mono font-semibold">Hello! I am Khai.</h2>
                             <h3 className="text-xl font-mono">Welcome to my busking page!</h3>
                         </div>
 
                         <div className="text-sm leading-relaxed">
-                            I am a Computer Science university student with a huge passion for singing and playing the guitar.
-                            I took the time to create this webpage for a fun project that combines both of what I love to do.
+                            I am a part-time busker with a huge passion for spreading happiness through music, doing this whenever I have the time.
+                            <br /><br />
+                            I made this webpage for a fun project that integrates my interest in web development.
                         </div>
 
-                        <div className="space-y-2">
+                        <div className="space-y-2 text-center">
                             <h4 className="font-semibold font-mono">Genres</h4>
                             <p className="text-sm">
                                 I love pop and oldies, so feel free to{" "}
