@@ -3,6 +3,7 @@ export interface SongRequest {
   name: string;
   artist: string;
   remarks: string;
+  requesterIp?: string;
   created: Date | any; // Firestore timestamp
 }
 

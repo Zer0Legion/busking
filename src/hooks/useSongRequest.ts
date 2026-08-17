@@ -10,13 +10,13 @@ export function useSongRequest() {
   });
   const [isLoading, setIsLoading] = useState(false);
 
-  const submitSongRequest = useCallback(async (songData: Omit<SongRequest, 'id' | 'created'>) => {
+  const submitSongRequest = useCallback(async (songData: Omit<SongRequest, 'id' | 'created'> & { requesterIp?: string }): Promise<boolean> => {
     if (!songData.name.trim()) {
       setRequestState({
         status: 'error',
         message: FORM_VALIDATION.requiredFields.songTitle
       });
-      return;
+      return false;
     }
 
     setIsLoading(true);
@@ -32,23 +32,27 @@ export function useSongRequest() {
         await addSongRequest(
           songData.name.toLowerCase().trim(),
           songData.artist.toLowerCase().trim(),
-          songData.remarks.toLowerCase().trim()
+          songData.remarks.toLowerCase().trim(),
+          songData.requesterIp || 'unknown'
         );
         setRequestState({
           status: 'success',
           message: FORM_VALIDATION.messages.songAdded
         });
-      } else {
-        setRequestState({
-          status: 'warning',
-          message: FORM_VALIDATION.messages.songAlreadyRequested
-        });
+        return true;
       }
+
+      setRequestState({
+        status: 'warning',
+        message: FORM_VALIDATION.messages.songAlreadyRequested
+      });
+      return false;
     } catch (error) {
       setRequestState({
         status: 'error',
         message: 'Failed to submit request. Please try again.'
       });
+      return false;
     } finally {
       setIsLoading(false);
     }

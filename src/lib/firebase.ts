@@ -44,7 +44,7 @@ export async function getIsBusking(): Promise<boolean> {
   }
 }
 
-export async function addSongRequest(name: string, artist: string, remarks: string): Promise<void> {
+export async function addSongRequest(name: string, artist: string, remarks: string, requesterIp?: string): Promise<void> {
   try {
     const isBusking = await getIsBusking();
     
@@ -63,6 +63,7 @@ export async function addSongRequest(name: string, artist: string, remarks: stri
       name: name,
       artist: artist,
       remarks: remarks,
+      requesterIp: requesterIp || "unknown",
       created: serverTimestamp()
     });
 

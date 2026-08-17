@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Input, Typography } from "@material-tailwind/react";
 import { useSongRequest } from "@/hooks/useSongRequest";
 import { SongRequest } from "@/types";
@@ -12,18 +12,39 @@ interface SongRequestFormProps {
 }
 
 export default function SongRequestForm({ onSuccess, className = "" }: SongRequestFormProps) {
+  const [requesterIp, setRequesterIp] = useState("");
   const [formData, setFormData] = useState<Omit<SongRequest, 'id' | 'created'>>({
     name: "",
     artist: "",
-    remarks: ""
+    remarks: "",
+    requesterIp: ""
   });
 
   const { requestState, isLoading, submitSongRequest } = useSongRequest();
 
+  useEffect(() => {
+    const fetchRequesterIp = async () => {
+      try {
+        const response = await fetch("/api/request-ip");
+        const data = await response.json();
+        setRequesterIp(data.ip || "unknown");
+      } catch (error) {
+        console.error("Failed to load requester IP:", error);
+        setRequesterIp("unknown");
+      }
+    };
+
+    fetchRequesterIp();
+  }, []);
+
   const handleSubmit = async () => {
-    await submitSongRequest(formData);
-    if (requestState.status === 'success') {
-      setFormData({ name: "", artist: "", remarks: "" });
+    const submitted = await submitSongRequest({
+      ...formData,
+      requesterIp: requesterIp || "unknown"
+    });
+
+    if (submitted) {
+      setFormData({ name: "", artist: "", remarks: "", requesterIp: "" });
       onSuccess?.();
     }
   };

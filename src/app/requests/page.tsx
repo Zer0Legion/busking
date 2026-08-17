@@ -1,6 +1,5 @@
 "use client";
 
-import { Typography } from "@material-tailwind/react";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHeader from "@/components/ui/PageHeader";
 import SongRequestForm from "@/components/forms/SongRequestForm";
@@ -15,9 +14,9 @@ export default function Requests() {
                 <SongRequestForm />
                 
                 <div className="m-4 flex flex-col gap-2 p-4">
-                    <Typography>
+                    <div>
                         <RequestWriteup />
-                    </Typography>
+                    </div>
                 </div>
             </div>
         </PageLayout>
